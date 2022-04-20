@@ -11,6 +11,9 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
 
@@ -48,7 +51,7 @@
     <section class="jumbotron text-center">
       <img src="img/unnamed (3).jpg" alt="Denta Wahyu" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Denta Wahyu Herlambang</h1>
-      <p class="lead">Looking For Job</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -68,10 +71,10 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae non voluptas quis porro dicta ipsa consequuntur. Natus exercitationem voluptatibus enim.</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-delay="200">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint doloremque eius sit magni temporibus dolorem dolorum nam consectetur quisquam natus aliquam, assumenda maiores ex tenetur?</p>
           </div>
         </div>
@@ -96,23 +99,23 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/1.jpg" class="card-img-top" alt="project 1" />
+            <div class="card" data-aos="fade-down-right">
+              <img src="img/projects/1.png" class="card-img-top" alt="project 1" />
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/2.jpg" class="card-img-top" alt="project 2" />
+            <div class="card" data-aos="flip-up" data-aos-delay="100">
+              <img src="img/projects/2.png" class="card-img-top" alt="project 2" />
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="fade-down-left" data-aos-delay="150">
               <img src="img/projects/3.jpg" class="card-img-top" alt="project 3" />
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -120,7 +123,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="zoom-out-right" data-aos-delay="200">
               <img src="img/projects/4.jpg" class="card-img-top" alt="project 4" />
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -128,8 +131,8 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/5.jpg" class="card-img-top" alt="project 5" />
+            <div class="card" data-aos="zoom-out-left" data-aos-delay="250">
+              <img src="img/projects/5.png" class="card-img-top" alt="project 5" />
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
@@ -200,7 +203,26 @@
       <p>Created with <i class="bi bi-suit-heart-fill text-danger"></i> by <a href="" class="text-white fw-bold">Denta Wahyu Herlambang</a></p>
     </footer>
     <!-- End Footer -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 1000,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', { duration: 2, delay: 1.5, text: 'Looking For Job' });
+      gsap.from('.jumbotron img', { duration: 1, rotateY: 360, opacity: 0, delay: 0.5 });
+      gsap.from('.navbar', { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
+      gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 1, ease: 'back' });
+    </script>
 
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwoWMMmXQDn0ZYxYUIY0CNw7-yan6hKn-pO87yPOTB6ogXopYS6-7P_3HPMzYr83XPw/exec';
